@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CustomImageGallery from "../components/customImageGallery/customImageGallery";
+import { getImagesFromServer } from "../utility/imagesFunctions";
 import { useInterval } from "../customHook/useInterval";
 import imageService from "../services/imageService";
 
@@ -10,26 +11,7 @@ const ImagesPages = () => {
     (async () => {
       await getImagesFromServer();
     })();
-  },60000);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     await getImages();
-  //   })();
-  // }, []);
-
-  const getImagesFromServer = async () => {
-    try {
-      let result = await imageService.getImages();
-      console.log("length", result.data.length);
-      if (result.status === 200) {
-        let images = result.data.splice(0, 10);
-        setdata(images);
-      }
-    } catch (e) {
-      console.log("e", e);
-    }
-  };
+  }, 60000);
 
   return (
     <div>

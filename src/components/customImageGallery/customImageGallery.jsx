@@ -64,6 +64,7 @@ const CustomImageGallery = ({ images }) => {
       {images.map((x) => {
         return (
           <img
+            name="showModal"
             src={x.url}
             className={styles.imgMain}
             onClick={() => {
