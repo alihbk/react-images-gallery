@@ -9,7 +9,8 @@ const ImagesPages = () => {
 
   useInterval(() => {
     (async () => {
-      await getImagesFromServer();
+      let result = await getImagesFromServer();
+      if (result) setdata(result);
     })();
   }, 60000);
 

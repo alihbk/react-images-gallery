@@ -9,6 +9,6 @@ export const getImagesFromServer = async () => {
       return images;
     }
   } catch (e) {
-    console.log("e2", e);
-  }
+    return null;
+   }
 };
