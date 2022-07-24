@@ -12,7 +12,7 @@ const ImagesPages = () => {
       let result = await getImagesFromServer();
       if (result) setdata(result);
     })();
-  }, 60000);
+  }, 1000);
 
   return (
     <div>

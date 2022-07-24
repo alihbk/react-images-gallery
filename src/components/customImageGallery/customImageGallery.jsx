@@ -47,7 +47,11 @@ const CustomImageGallery = ({ images }) => {
           height={25}
           alt="right"
         />
-        <img className={styles.lightboximg} src={imageToShow.url} alt="some" />
+        <img
+          className={styles.lightboximg}
+          src={imageToShow.avatar_url}
+          alt="some"
+        />
         <img
           src={arrowRight}
           onClick={showNext}
@@ -65,7 +69,7 @@ const CustomImageGallery = ({ images }) => {
         return (
           <img
             name="showModal"
-            src={x.url}
+            src={x.avatar_url}
             className={styles.imgMain}
             onClick={() => {
               setIsOpenModal(true);
